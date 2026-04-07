@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Diagonals
+comment1.params=
+comment1.target=double[]\ exampleMatrix()
+comment2.params=a\ b
+comment2.target=double[]\ sum(double[],\ double[])
+comment3.params=a\ b
+comment3.target=double[]\ product(double[],\ double[])
+comment4.params=a
+comment4.target=double[]\ inverse(double[])
+numComments=5
