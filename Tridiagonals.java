@@ -2,9 +2,28 @@ import static java.lang.Math.*;
 
 class Tridiagonals
 {
-static double[][] exampleMatrix(int n) 
+    static double[][] exampleMatrix(int n) 
     {
-        double m[][] = new double [1][1]; //dummy code: write your own
-        return m; //dummy code: write your own
+        return null;
+    }
+
+    static boolean isValidTridiagonal(double[][] a) 
+    {
+        return false;
+    }
+
+    static double[][] sum(double[][] a, double[][] b) 
+    {
+        return null;
+    }
+
+    static double[][] productWithDiagonal(double[][] d, double[] t) 
+    {
+        return null;
+    }
+
+    static double[] linearSolve(double[][] t, double[] v) 
+    {
+        return null;
     }
 }
