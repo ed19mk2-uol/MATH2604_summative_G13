@@ -85,4 +85,23 @@ class Tridiagonals
             
         return x;
     }
+
+    public class TestLinearSolve {
+    public static void main(String[] args) {
+
+        double[][] T = new double[3][3];
+        T[0] = new double[]{-1, -1, 0};
+        T[1] = new double[]{2, 2, 2};
+        T[2] = new double[]{-1, -1, 0};
+
+        double[] v = new double[]{1, 0, 1};
+
+        double[] x = Tridiagonals.linearSolve(T, v);
+
+        System.out.println("Solution:");
+        for (double xi : x) {
+            System.out.println(xi);
+        }
+    }
+}
 }
