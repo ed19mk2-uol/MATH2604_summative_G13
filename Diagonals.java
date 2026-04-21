@@ -7,12 +7,6 @@ class Diagonals
         return new double[] {10, 8, 5, -10, 7};
     }
     
-    static double[] exampleMatrix()
-    {      
->>>>>>> 05da7ec6797108ff5b263eb868b363e3150c20b9
-        return null;
-    }
-
     public static double[] sum(double[] a, double[] b)
     {
          if (a == null || b == null) 
