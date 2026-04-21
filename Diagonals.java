@@ -1,9 +1,15 @@
 import static java.lang.Math.*;
 
 public class Diagonals
-{
+
+    /**
+    * Returns a representation of the diagonal matrix given 
+    * The matrix is represented as a 1D array where each element corresponds to a diagonal entry
+    * @return a double[] one-dimensional array representing the diagonal entries
+    */
     public static double[] exampleMatrix()
     {
+        // the matrix ix 5x5 and has 10,8,5,-10,7 on its diagonal and zero elsewhere
         return new double[] {10, 8, 5, -10, 7};
     }
 
