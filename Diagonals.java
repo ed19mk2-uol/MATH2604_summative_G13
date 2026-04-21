@@ -2,7 +2,7 @@ import static java.lang.Math.*;
 
 class Diagonals
 {
-    static double[] exampleMatrix()
+    public static double[] exampleMatrix()
     {
         return null;
     }

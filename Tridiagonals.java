@@ -2,7 +2,7 @@ import static java.lang.Math.*;
 
 class Tridiagonals
 {
-    static double[][] exampleMatrix(int n) 
+    public static double[][] exampleMatrix(int n) 
     {
         return null;
     }
