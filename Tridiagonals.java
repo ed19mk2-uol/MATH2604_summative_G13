@@ -50,6 +50,39 @@ class Tridiagonals
 
     static double[] linearSolve(double[][] t, double[] v) 
     {
-        return null;
+        if (!isValidTridiagonal(t)) return null; //check if the matrix is tridiagonal
+        if (v==null) return null; // make sure vector is not null
+
+        int w = t[1].length;
+        if (v.length != w) return null; //check if length of matrix and vector is the same
+
+        // create copy so that dont accidentally change original matrix
+
+        double[] c1 = new double[n];
+        double[] d1 = new double[n];
+
+        //initialising first row
+        c1[0] = t[0][0] / t[1][0];
+        d1[0] = v[0] / t[1][0];
+
+        for (int i=1; i<n; i++) {
+            double below = t[2][i-1]; //below diag to roq i
+            double denominator = t[1][i] - below * c1[i-1];
+            if (i,n-1) {
+                c1[i] = t[0][i] / denominator; //update x if i<n-1
+            }
+            //update y
+            d1[i] = (v[i] - below * d1[i-1]) / denominator;
+        }
+
+        //back-subs
+        double[] x = new double[n];
+        x[n-1] = d1[n-1];
+
+        for (int i = n-2; i>=0; i--){
+            x[i]= d1[i] - c1[i] * x[i+1];
+            
+            
+        return x;
     }
 }
