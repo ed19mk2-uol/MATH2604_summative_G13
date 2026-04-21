@@ -1,13 +1,13 @@
 import static java.lang.Math.*;
 
-class Diagonals
+public class Diagonals
 {
-    static double[] exampleMatrix()
+    public static double[] exampleMatrix()
     {
-        return null;
+        return new double[] {10, 8, 5, -10, 7};
     }
 
-    static double[] sum(double[] a, double[] b)
+    public static double[] sum(double[] a, double[] b)
     {
         return null;
     }
