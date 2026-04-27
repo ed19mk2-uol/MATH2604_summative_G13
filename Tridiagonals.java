@@ -91,8 +91,15 @@ public class Tridiagonals
 
         return matrix
     }
-        
 
+    /**
+    * Solves the linear equation system Tx=v where T is a tridiagonal matrix (n x n) and v is a vector
+    * Implement Thomas Algorithm, where T is assumed invertible
+    *
+    * @param a double[][], t - the tridiagonal matrix T
+    * @param a double[][], v - the right-hand side vector 
+    * @return a double[],x whixh is the solution, or return null if inputs are invalid
+    */
     static double[] linearSolve(double[][] t, double[] v) 
     {
         if (!isValidTridiagonal(t)) return null; //check if the matrix is tridiagonal
