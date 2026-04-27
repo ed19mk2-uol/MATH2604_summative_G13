@@ -1,6 +1,5 @@
 import static java.lang.Math.*;
 
-<<<<<<< HEAD
 public class Diagonals
     /**
     * Returns a representation of the diagonal matrix given 
@@ -9,12 +8,15 @@ public class Diagonals
     */
     public static double[] exampleMatrix()
     {
+<<<<<<< HEAD
 =======
 class Diagonals
 {
     static double[] exampleMatrix()
     {      
 
+=======
+>>>>>>> 14cca646029eb4960e7f51103d554efc6b639509
         // the matrix ix 5x5 and has 10,8,5,-10,7 on its diagonal and zero elsewhere
         return new double[] {10, 8, 5, -10, 7};
     }

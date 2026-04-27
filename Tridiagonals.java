@@ -27,14 +27,16 @@ public class Tridiagonals
     */
     public static boolean isValidTridiagonal(double[][] a) 
     {
-        if (a.length !=3) return false; // check that row is 3 (above diagonal, diagonal, below diagonal)
         if (a == null) return false; // check if the array is null
+        if (a.length !=3) return false; // check that row is 3 (above diagonal, diagonal, below diagonal)
         for (double[] row : a) { // check if any of the row are null, each row must not be null
             if (row == null) return false;
+        }
 
         int n = a[1].length; //use the diagonal row as a reference
         if (n<1) return false; //safety check bcs matrix size must be at least 1, cant be 0 (n>=1)
 
+        if (a[0].length !=n || a[2].length !=n) return false; // check that all rows are of the same length
         return true;
     }
 
