@@ -1,6 +1,5 @@
 import static java.lang.Math.*;
 
-<<<<<<< HEAD
 public class Diagonals
     /**
     * Returns a representation of the diagonal matrix given 
@@ -9,14 +8,11 @@ public class Diagonals
     */
     public static double[] exampleMatrix()
     {
-=======
-class Diagonals
-{
-    static double[] exampleMatrix()
-    {      
->>>>>>> 036c733 (I have implemented the exampleMatrix and the productWithDiagonal functions of the Tridiagonal class.)
         // the matrix ix 5x5 and has 10,8,5,-10,7 on its diagonal and zero elsewhere
         return new double[] {10, 8, 5, -10, 7};
+    }
+      
+>>>>>>> 036c733 (I have implemented the exampleMatrix and the productWithDiagonal functions of the Tridiagonal class.)
     }
     
     public static double[] sum(double[] a, double[] b)
