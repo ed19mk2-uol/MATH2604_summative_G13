@@ -2,6 +2,15 @@ import static java.lang.Math.*;
 
 class ODE
 {
+    /**
+    * Approximates the value of the function f at x = 0.5 for the boundary value problem 
+    * f''(x) + cos(x) * f(x) = a * x^2, with f(0) = 0 and f(1) = 0 with the finite difference method.
+    *
+    * @param a the parameter a in the differential equation
+    * @param n the number of grid points
+    * @return the approximate value of f at x = 0.5
+    */
+
     public static double solve(double a, int n) 
     {
         if (n <= 0)
