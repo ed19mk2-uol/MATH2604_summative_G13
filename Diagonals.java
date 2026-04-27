@@ -1,6 +1,6 @@
 import static java.lang.Math.*;
 
-class Diagonals
+public class Diagonals
     /**
     * Returns a representation of the diagonal matrix given 
     * The matrix is represented as a 1D array where each element corresponds to a diagonal entry
@@ -33,7 +33,7 @@ class Diagonals
         return result;
     }
 
-    static double[] product(double[] a, double[] b)
+    public static double[] product(double[] a, double[] b)
     {
         if(a == null || b == null) {
             return null;
@@ -47,7 +47,7 @@ class Diagonals
         return null;
     }
 
-    static double[] inverse(double[] a) // Returns the inverse of a diagonal matrix 
+    public static double[] inverse(double[] a) // Returns the inverse of a diagonal matrix 
     {
         if (a == null)
         {
