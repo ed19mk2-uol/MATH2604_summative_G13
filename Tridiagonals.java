@@ -56,26 +56,43 @@ public class Tridiagonals
         return null;
     }
 
-    static double[] linearSolve(double[][] t, double[] v) 
+    /**
+    *
+    */
+        
+    public static double[] linearSolve(double[][] t, double[] v) 
     {
         if (!isValidTridiagonal(t)) return null; //check if the matrix is tridiagonal
-        if (v==null) return null; // make sure vector is not null
+        if (v==null) return null; // validate vector and make sure vector is not null
 
-        int w = t[1].length;
-        if (v.length != w) return null; //check if length of matrix and vector is the same
+        int n = t[1].length; //get length of matrix T
+        if (v.length != n) return null; //Ensure the length of matrix and vector is equal
 
-        // create copy so that dont accidentally change original matrix
+        // Implementing Thomas Algorithm
+        // create copy to avoid accidentally changing the original matrix
+        // c1 = modified above diagonal, d1 = modified right hand side
 
         double[] c1 = new double[n];
         double[] d1 = new double[n];
 
+        // Standard Thomas Algorithm:
+        // below-diagona: t[2][i] = b_{i+1} 
+        // diagonal: t[1][i] = a_i
+        // above diagonal: t[0][i] = c_i
+
+        
+        // 1st Step : Forward sweep - eliminate below-diagonal entries
         //initialising first row
-        c1[0] = t[0][0] / t[1][0];
-        d1[0] = v[0] / t[1][0];
+        c1[0] = t[0][0] / t[1][0]; // c1_0 = c_0 / a_0
+        d1[0] = v[0] / t[1][0];    // d1_0 = v_0 / a_0
 
         for (int i=1; i<n; i++) {
-            double below = t[2][i-1]; //below diag to roq i
-            double denominator = t[1][i] - below * c1[i-1];
+            double below = t[2][i-1]; //below diagonal to row i
+
+            // denominator = a_i - b_i * c1_{i-1}
+            double denom = t[1][i] - below * c1[i-1]; // b_i
+
+            // update c1
             if (i,n-1) {
                 c1[i] = t[0][i] / denominator; //update x if i<n-1
             }
