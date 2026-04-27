@@ -4,8 +4,17 @@ public class Tridiagonals
 {
     public static double[][] exampleMatrix(int n) 
     {
-        
-        return null;
+       double[][] matrix = new double[3][n]
+       for (int i = 0; i < n; i++)
+       {
+        matrix[0][i] = 1.0;
+        matrix[2][i] = i + 2;
+       }
+       for (int i = 0; i < n; i++)
+       {
+        matrix[1][i] = - ((i + 1) * (i + 1))
+       }
+       return matrix;
     }
 
     /**
@@ -52,15 +61,37 @@ public class Tridiagonals
     }
 
     static double[][] productWithDiagonal(double[][] d, double[] t) 
-    {
-        return null;
-    }
+    {   
+        if (d == null || t == null)
+        {
+            return null;
+        }
 
-    /**
-    *
-    */
+        int r = d.length;
+
+        if (t[0].length != r || t[1].length != r || t[2].length != r)
+        {
+            return null;
+        }
+
+        double[][] matrix = new double[3][r]
+
+        for (int i = 0; i < r; i++)
+        {
+            matrix[1][i] = d[i] * t[1][i];
+        }
+
+        for (int i = 0; i < r - 1; i++)
+        {
+            matrix[0][i] = d[i] * t[0][i]
+            matrix[2][i] = d[i + 1] * t[2][i]
+        }
+
+        return matrix
+    }
         
-    public static double[] linearSolve(double[][] t, double[] v) 
+
+    static double[] linearSolve(double[][] t, double[] v) 
     {
         if (!isValidTridiagonal(t)) return null; //check if the matrix is tridiagonal
         if (v==null) return null; // validate vector and make sure vector is not null
