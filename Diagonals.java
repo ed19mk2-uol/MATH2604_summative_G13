@@ -66,7 +66,7 @@ public class Diagonals
      * @param a double[] one-dimensional array representing the diagonal entries of the matrix
      * 
      * @return a new array containing the diagonal entries of the inverse matrix,
-     *   where each element is given by 1.0 / a[i]. Returns null if the input array is null.
+     *         where each element is given by 1.0 / a[i]. Returns null if the input array is null.
      */
 
     public static double[] inverse(double[] a) // Returns the inverse of a diagonal matrix 
