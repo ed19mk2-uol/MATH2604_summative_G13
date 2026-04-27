@@ -40,7 +40,7 @@ public class Tridiagonals
         return true;
     }
 
-    /** Comutes the sum of two tridiagonal matrices represented as double[][] arrays
+    /** Computes the sum of two tridiagonal matrices represented as double[][] arrays
      * The sum of two tridiagonal matrices is also a tridiagonal matrix, where each
      * entry is the sum of the corresponding entries in the input matrices.
      *
