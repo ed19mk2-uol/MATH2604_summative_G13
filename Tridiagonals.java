@@ -80,7 +80,6 @@ public class Tridiagonals
         // diagonal: t[1][i] = a_i
         // above diagonal: t[0][i] = c_i
 
-        
         // 1st Step : Forward sweep - eliminate below-diagonal entries
         //initialising first row
         c1[0] = t[0][0] / t[1][0]; // c1_0 = c_0 / a_0
@@ -94,15 +93,15 @@ public class Tridiagonals
 
             // update c1
             if (i,n-1) {
-                c1[i] = t[0][i] / denominator; //update x if i<n-1
+                c1[i] = t[0][i] / denom; //update x if i<n-1
             }
-            //update y
-            d1[i] = (v[i] - below * d1[i-1]) / denominator;
+            //update d1
+            d1[i] = (v[i] - below * d1[i-1]) / denom;
         }
 
-        //back-subs
+        // Step 2: Back substitution - solve for x starting from the last entry
         double[] x = new double[n];
-        x[n-1] = d1[n-1];
+        x[n-1] = d1[n-1]; 
 
         for (int i = n-2; i>=0; i--){
             x[i]= d1[i] - c1[i] * x[i+1];
