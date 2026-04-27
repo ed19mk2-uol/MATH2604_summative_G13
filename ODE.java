@@ -83,4 +83,4 @@ class ODE
 
         return w[nearestIndex];
     }
-}t
+}

@@ -54,6 +54,15 @@ class Diagonals
         return null;
     }
 
+    /** Computes the inverse of a matrix represented as a 1D array of its diagonal entries.
+     *  The inverse of a diagonal matrix is obtained by taking the reciprocal of each of its diagonal entries.
+     * 
+     * @param a double[] one-dimensional array representing the diagonal entries of the matrix
+     * 
+     * @return a new array containing the diagonal entries of the inverse matrix,
+     *   where each element is given by 1.0 / a[i]. Returns null if the input array is null.
+     */
+
     public static double[] inverse(double[] a) // Returns the inverse of a diagonal matrix 
     {
         if (a == null)
