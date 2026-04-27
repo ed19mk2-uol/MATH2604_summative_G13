@@ -14,11 +14,17 @@ class Diagonals
 {
     static double[] exampleMatrix()
     {      
->>>>>>> 036c733 (I have implemented the exampleMatrix and the productWithDiagonal functions of the Tridiagonal class.)
+
         // the matrix ix 5x5 and has 10,8,5,-10,7 on its diagonal and zero elsewhere
         return new double[] {10, 8, 5, -10, 7};
     }
     
+    /**
+     * Takes 2 diagonal matrices both one dimensional arrays
+     * Returns null if either array is null or length of the arrays don't match
+     * If both arrays has length 0 then empty array is returned 
+     * Typically returns an array representing the sum of the diagonal matrices
+     */
     public static double[] sum(double[] a, double[] b)
     {
          if (a == null || b == null) 
@@ -40,6 +46,12 @@ class Diagonals
         return result;
     }
 
+    /**
+     * Takes 2 diagonal matrices both one dimensional arrays
+     * Returns null if either array is null or length of the arrays don't match
+     * If both arrays has length 0 then empty array is returned 
+     * Typically returns an array representing the product of the diagonal matrices
+     */
     public static double[] product(double[] a, double[] b)
     {
         if(a == null || b == null) {
