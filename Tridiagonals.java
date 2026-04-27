@@ -27,8 +27,8 @@ public class Tridiagonals
     */
     public static boolean isValidTridiagonal(double[][] a) 
     {
-        if (a.length !=3) return false; // check that row is 3 (above diagonal, diagonal, below diagonal)
         if (a == null) return false; // check if the array is null
+        if (a.length !=3) return false; // check that row is 3 (above diagonal, diagonal, below diagonal)
         for (double[] row : a) { // check if any of the row are null, each row must not be null
             if (row == null) return false;
 
