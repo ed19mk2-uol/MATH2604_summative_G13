@@ -27,14 +27,16 @@ public class Tridiagonals
     */
     public static boolean isValidTridiagonal(double[][] a) 
     {
-        if (a.length !=3) return false; // check that row is 3 (above diagonal, diagonal, below diagonal)
         if (a == null) return false; // check if the array is null
+        if (a.length !=3) return false; // check that row is 3 (above diagonal, diagonal, below diagonal)
         for (double[] row : a) { // check if any of the row are null, each row must not be null
             if (row == null) return false;
+        }
 
         int n = a[1].length; //use the diagonal row as a reference
         if (n<1) return false; //safety check bcs matrix size must be at least 1, cant be 0 (n>=1)
 
+        if (a[0].length !=n || a[2].length !=n) return false; // check that all rows are of the same length
         return true;
     }
 
@@ -89,8 +91,15 @@ public class Tridiagonals
 
         return matrix
     }
-        
 
+    /**
+    * Solves the linear equation system Tx=v where T is a tridiagonal matrix (n x n) and v is a vector
+    * Implement Thomas Algorithm, where T is assumed invertible
+    *
+    * @param a double[][], t - the tridiagonal matrix T
+    * @param a double[][], v - the right-hand side vector 
+    * @return a double[],x whixh is the solution, or return null if inputs are invalid
+    */
     static double[] linearSolve(double[][] t, double[] v) 
     {
         if (!isValidTridiagonal(t)) return null; //check if the matrix is tridiagonal
@@ -123,7 +132,7 @@ public class Tridiagonals
             double denom = t[1][i] - below * c1[i-1]; // b_i
 
             // update c1
-            if (i,n-1) {
+            if (i < n-1) {
                 c1[i] = t[0][i] / denom; //update x if i<n-1
             }
             //update d1
@@ -136,27 +145,9 @@ public class Tridiagonals
 
         for (int i = n-2; i>=0; i--){
             x[i]= d1[i] - c1[i] * x[i+1];
+        }
             
             
         return x;
     }
-
-    public class TestLinearSolve {
-    public static void main(String[] args) {
-
-        double[][] T = new double[3][3];
-        T[0] = new double[]{-1, -1, 0};
-        T[1] = new double[]{2, 2, 2};
-        T[2] = new double[]{-1, -1, 0};
-
-        double[] v = new double[]{1, 0, 1};
-
-        double[] x = Tridiagonals.linearSolve(T, v);
-
-        System.out.println("Solution:");
-        for (double xi : x) {
-            System.out.println(xi);
-        }
-    }
-}
 }
