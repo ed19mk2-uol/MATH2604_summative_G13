@@ -1,6 +1,6 @@
 import static java.lang.Math.*;
 
-class Tridiagonals
+public class Tridiagonals
 {
     public static double[][] exampleMatrix(int n) 
     {
@@ -8,17 +8,25 @@ class Tridiagonals
         return null;
     }
 
+    /**
+     * Checks whether a double [][] array is a tridiagonal matrix
+     * Criterion for validity:
+     * 1. Length 3 at the first level, and length n at second level (n>=1)
+     * 2. All three rows have the same length n
+     * @param a double [][] array 
+     * @return true if valid (is a tridiagonal matrix representation) and false otherwise
+    */
     public static boolean isValidTridiagonal(double[][] a) 
     {
-        if (a.length !=3) return false; // check so row is 3
-        if (a == null) return false; // check if everything is null
-        for (double[] row : a) { // check if any of the row are null
+        if (a.length !=3) return false; // check that row is 3 (above diagonal, diagonal, below diagonal)
+        if (a == null) return false; // check if the array is null
+        for (double[] row : a) { // check if any of the row are null, each row must not be null
             if (row == null) return false;
 
-        int n = a[1].length; 
-        if (n<1) return false; //safety check bcs matrix size must be at least 1, cant be 0
-        
-        return false;
+        int n = a[1].length; //use the diagonal row as a reference
+        if (n<1) return false; //safety check bcs matrix size must be at least 1, cant be 0 (n>=1)
+
+        return true;
     }
 
     static double[][] sum(double[][] a, double[][] b)
