@@ -125,7 +125,7 @@ public class Tridiagonals
             double denom = t[1][i] - below * c1[i-1]; // b_i
 
             // update c1
-            if (i,n-1) {
+            if (i < n-1) {
                 c1[i] = t[0][i] / denom; //update x if i<n-1
             }
             //update d1
@@ -138,27 +138,9 @@ public class Tridiagonals
 
         for (int i = n-2; i>=0; i--){
             x[i]= d1[i] - c1[i] * x[i+1];
+        }
             
             
         return x;
     }
-
-    public class TestLinearSolve {
-    public static void main(String[] args) {
-
-        double[][] T = new double[3][3];
-        T[0] = new double[]{-1, -1, 0};
-        T[1] = new double[]{2, 2, 2};
-        T[2] = new double[]{-1, -1, 0};
-
-        double[] v = new double[]{1, 0, 1};
-
-        double[] x = Tridiagonals.linearSolve(T, v);
-
-        System.out.println("Solution:");
-        for (double xi : x) {
-            System.out.println(xi);
-        }
-    }
-}
 }
