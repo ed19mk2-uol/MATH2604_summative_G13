@@ -1,6 +1,7 @@
 import static java.lang.Math.*;
 
 public class Diagonals
+    {
     /**
     * Returns a representation of the diagonal matrix given 
     * The matrix is represented as a 1D array where each element corresponds to a diagonal entry
