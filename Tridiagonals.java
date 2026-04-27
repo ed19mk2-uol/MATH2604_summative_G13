@@ -80,7 +80,7 @@ public class Tridiagonals
         // diagonal: t[1][i] = a_i
         // above diagonal: t[0][i] = c_i
 
-        // 1st Step : Forward sweep - eliminate below-diagonal entries
+        // Step 1 : Forward sweep - eliminate below-diagonal entries
         //initialising first row
         c1[0] = t[0][0] / t[1][0]; // c1_0 = c_0 / a_0
         d1[0] = v[0] / t[1][0];    // d1_0 = v_0 / a_0
