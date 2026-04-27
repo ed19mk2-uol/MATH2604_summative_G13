@@ -7,11 +7,7 @@ public class Diagonals
     * @return a double[] one-dimensional array representing the diagonal entries
     */
     public static double[] exampleMatrix()
-    {
-class Diagonals
-{
-    static double[] exampleMatrix()
-    {      
+    {    
         // the matrix ix 5x5 and has 10,8,5,-10,7 on its diagonal and zero elsewhere
         return new double[] {10, 8, 5, -10, 7};
     }
