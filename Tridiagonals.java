@@ -1,7 +1,20 @@
 import static java.lang.Math.*;
-
+/**
+ * Offers practical methods for handling tridiagonal matrices.
+ * A typical tridiagonal matrix is shown as a 3 x n array, where 
+ * row 1 is the upper diagonal, row 2 is the main diagonal and 
+ * row 3 is the lower diagonal. 
+ */
 public class Tridiagonals
 {
+    /**
+     * Computes a n x n tridiagonal matrix.
+     * 
+     * @param Matrix of size n assumed to be > 0
+     * @return 3 x n array that representing the tridiagonal matrix, where 
+     * row 0 stores the upper diagonal, row 1 stores the main diagonal, and 
+     * row 2 stores the lower diagonal. 
+     */
     public static double[][] exampleMatrix(int n) 
     {
        double[][] matrix = new double[3][n]
@@ -72,7 +85,16 @@ public class Tridiagonals
 
         return result;
     }
-
+    
+    /**
+     * Computes the product of a diagonal matrix with a tridiagonal matrix.
+     * 
+     * @param Diagonal matrix D, as a one dimensional array.
+     * @param Tridiagonal matrix T, as a 3 x n array.
+     * @return A 3 x n array that is the product of D and T, or null if D is is null 
+     * also if the inputs are invalid or the dimensions are incompatible.
+     *  
+     */
     static double[][] productWithDiagonal(double[][] d, double[] t) 
     {   
         if (d == null || t == null)
