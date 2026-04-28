@@ -31,18 +31,20 @@ public class Tridiagonals
     }
 
     /**
-     * Checks whether a double [][] array is a tridiagonal matrix
+     * Checks whether a double [][] array is a valid representation of a tridiagonal matrix
      * Criterion for validity:
-     * 1. Length 3 at the first level, and length n at second level (n>=1)
-     * 2. All three rows have the same length n
-     * @param a double [][] array 
+     * 1. The array itself is not null
+     * 2. Length 3 at the first level, and length n at second level (n>=1)
+     * 3. All three rows have the same length n where n>0
+     * 
+     * @param a double [][] array to validate
      * @return true if valid (is a tridiagonal matrix representation) and false otherwise
     */
     public static boolean isValidTridiagonal(double[][] a) 
     {
         if (a == null) return false; // check if the array is null
-        if (a.length !=3) return false; // check that row is 3 (above diagonal, diagonal, below diagonal)
-        for (double[] row : a) { // check if any of the row are null, each row must not be null
+        if (a.length !=3) return false; // check that the array has exactly 3 rows (above diagonal, diagonal, below diagonal)
+        for (double[] row : a) { // check if any of the row are null, as each row must not be null
             if (row == null) return false;
         }
 
@@ -50,7 +52,7 @@ public class Tridiagonals
         if (n<1) return false; //safety check bcs matrix size must be at least 1, cant be 0 (n>=1)
 
         if (a[0].length !=n || a[2].length !=n) return false; // check that all rows are of the same length
-        return true;
+        return true; 
     }
 
     /** Computes the sum of two tridiagonal matrices represented as double[][] arrays
@@ -129,9 +131,11 @@ public class Tridiagonals
     * Solves the linear equation system Tx=v where T is a tridiagonal matrix (n x n) and v is a vector
     * Implement Thomas Algorithm, where T is assumed invertible
     *
-    * @param a double[][], t - the tridiagonal matrix T
-    * @param a double[][], v - the right-hand side vector 
-    * @return a double[],x whixh is the solution, or return null if inputs are invalid
+    * @param a double[][], t - the tridiagonal matrix T, represented as a double[3][n] array
+    * @param a double[][], v - the right-hand side vector of length n
+    * @return a double[],x which is the solution (a double[] of length n), or return null if inputs are invalid
+    * example of invalid inputs include: t is not a valid tridiagonal matrix, v is null, or if dimensions of t and v are incompatible
+    * @see #isValidTridiagonal(double[][])
     */
     static double[] linearSolve(double[][] t, double[] v) 
     {
@@ -149,7 +153,7 @@ public class Tridiagonals
         double[] d1 = new double[n];
 
         // Standard Thomas Algorithm:
-        // below-diagona: t[2][i] = b_{i+1} 
+        // below-diagonal: t[2][i] = b_{i+1} 
         // diagonal: t[1][i] = a_i
         // above diagonal: t[0][i] = c_i
 
@@ -172,7 +176,7 @@ public class Tridiagonals
             d1[i] = (v[i] - below * d1[i-1]) / denom;
         }
 
-        // Step 2: Back substitution - solve for x starting from the last entry
+        // Step 2: Back substitution - solve for x starting from the last entry upward
         double[] x = new double[n];
         x[n-1] = d1[n-1]; 
 
