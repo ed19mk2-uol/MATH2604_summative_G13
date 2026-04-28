@@ -14,7 +14,8 @@ public class Diagonals
     }
     
     /**
-     * @param Takes 2 diagonal matrices both one dimensional arrays
+     * @param Diagonal matricx a, one dimensional array  
+     * @param Diagonal matrix b, one dimensional array
      * Returns null if either array is null or length of the arrays don't match
      * If both arrays has length 0 then empty array is returned 
      * @return Typically returns an array representing the sum of the diagonal matrices
@@ -41,7 +42,8 @@ public class Diagonals
     }
 
     /**
-     * @param Takes 2 diagonal matrices both one dimensional arrays
+     * @param Diagonal matricx a, one dimensional array  
+     * @param Diagonal matrix b, one dimensional array
      * Returns null if either array is null or length of the arrays don't match
      * If both arrays has length 0 then empty array is returned 
      * @return Typically returns an array representing the product of the diagonal matrices
