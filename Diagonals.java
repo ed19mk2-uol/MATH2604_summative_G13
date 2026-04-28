@@ -14,6 +14,8 @@ public class Diagonals
     }
     
     /**
+     * Computes the sum of 2 diagonal matrices.
+     * 
      * @param Diagonal matricx a, one dimensional array  
      * @param Diagonal matrix b, one dimensional array
      * Returns null if either array is null or length of the arrays don't match
@@ -42,6 +44,8 @@ public class Diagonals
     }
 
     /**
+     * Computes the product of 2 diagonal matrices.
+     * 
      * @param Diagonal matricx a, one dimensional array  
      * @param Diagonal matrix b, one dimensional array
      * Returns null if either array is null or length of the arrays don't match
