@@ -1,5 +1,11 @@
 import static java.lang.Math.*;
 
+/**
+* Provide operations for n x n diagonal matrix that are stored as one-dimensional array of type double[] with length n
+* The the array elements a[0], . . . , a[n-1] hold the matrix entries A0,0, . . . , An−1,n−1. 
+
+*/
+
 public class Diagonals
     {
     /**
