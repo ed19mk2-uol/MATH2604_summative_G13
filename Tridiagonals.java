@@ -66,7 +66,7 @@ public class Tridiagonals
     *          or null if either input is invalid (not a tridiagonal matrix or null)
     */
 
-    static double[][] sum(double[][] a, double[][] b)
+    public static double[][] sum(double[][] a, double[][] b)
     {
         if (a == null || b == null)
         {
@@ -97,7 +97,7 @@ public class Tridiagonals
      * also if the inputs are invalid or the dimensions are incompatible.
      *  
      */
-    static double[][] productWithDiagonal(double[][] d, double[] t) 
+    public static double[][] productWithDiagonal(double[][] d, double[] t) 
     {   
         if (d == null || t == null)
         {
@@ -137,7 +137,7 @@ public class Tridiagonals
     * example of invalid inputs include: t is not a valid tridiagonal matrix, v is null, or if dimensions of t and v are incompatible
     * @see #isValidTridiagonal(double[][])
     */
-    static double[] linearSolve(double[][] t, double[] v) 
+    public static double[] linearSolve(double[][] t, double[] v) 
     {
         if (!isValidTridiagonal(t)) return null; //check if the matrix is tridiagonal
         if (v==null) return null; // validate vector and make sure vector is not null
