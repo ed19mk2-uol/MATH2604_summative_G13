@@ -68,20 +68,23 @@ public class Tridiagonals
 
     public static double[][] sum(double[][] a, double[][] b)
     {
-        if (a == null || b == null)
+        if (a == null || b == null) // check if either input is null
         {
-            return null;
+            return null; // return null if either input is null
+        }
+        {
+            return null; // return null if either input is not a valid tridiagonal matrix
         }
 
         int n = a.length;
 
         double[][] result = new double[n][n];
 
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) // iterate through each row
         {
-            for (int j = 0; j < n; j++)
+            for (int j = 0; j < n; j++) // iterate through each column
             {
-                result[i][j] = a[i][j] + b[i][j];
+                result[i][j] = a[i][j] + b[i][j]; // sum the corresponding entries from both matrices
             }
         }
 
