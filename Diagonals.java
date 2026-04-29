@@ -30,20 +30,20 @@ public class Diagonals
      */
     public static double[] sum(double[] a, double[] b)
     {
-         if (a == null || b == null) 
+         if (a == null || b == null) //Checking if inputs of the array are null
         {
             return null; 
         }
         
-        if (a.length != b.length)
+        if (a.length != b.length) //Checking if inputs of the arrays are of the same length
         {
-            return null;
+            return null; //Return null if lengths are different
         }
 
-        double[] result = new double[a.length];
+        double[] result = new double[a.length]; //Creating new array to store the sum results
         for (int i = 0; i < a.length; i++)
         {
-            result[i] = a[i] + b[i];
+            result[i] = a[i] + b[i]; //Add the values in the same position
         }
 
         return result;
@@ -60,13 +60,13 @@ public class Diagonals
      */
     public static double[] product(double[] a, double[] b)
     {
-        if(a == null || b == null) {
+        if(a == null || b == null) { //Checking if inputs of the array are null
             return null;
         }
 
-        double[] result = new double[a.length];
+        double[] result = new double[a.length]; //Creating new array to store the product results
         for (int i = 0; i < a.length; i++) {
-            result[i] = a[i] * b[i]
+            result[i] = a[i] * b[i] //Multiply the values in the same position
         }
         
         return null;
