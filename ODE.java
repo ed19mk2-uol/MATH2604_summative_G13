@@ -1,6 +1,6 @@
 import static java.lang.Math.*;
 
-class ODE
+public class ODE
 {
     /**
     * Approximates the value of the function f at x = 0.5 for the boundary value problem 
