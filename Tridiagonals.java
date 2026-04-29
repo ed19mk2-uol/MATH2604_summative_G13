@@ -17,17 +17,18 @@ public class Tridiagonals
      */
     public static double[][] exampleMatrix(int n) 
     {
+       // Creating a 2D array containing 3 rows and n columns 
        double[][] matrix = new double[3][n]
-       for (int i = 0; i < n; i++)
+       for (int i = 0; i < n; i++) // Filling in the first and third rows 
        {
         matrix[0][i] = 1.0;
         matrix[2][i] = i + 2;
        }
-       for (int i = 0; i < n; i++)
+       for (int i = 0; i < n; i++) // Fill second row
        {
         matrix[1][i] = - ((i + 1) * (i + 1))
        }
-       return matrix;
+       return matrix; //Return the final matrix
     }
 
     /**
@@ -99,29 +100,30 @@ public class Tridiagonals
      */
     public static double[][] productWithDiagonal(double[][] d, double[] t) 
     {   
+        //Checking if either input into the array is null
         if (d == null || t == null)
         {
             return null;
         }
 
-        int r = d.length;
+        int r = d.length; //Storing length of the array 
 
-        if (t[0].length != r || t[1].length != r || t[2].length != r)
+        if (t[0].length != r || t[1].length != r || t[2].length != r)  //Checking all rows of t have same length as d
         {
             return null;
         }
 
-        double[][] matrix = new double[3][r]
+        double[][] matrix = new double[3][r] //Creating new array with 3 rows and r columns
 
-        for (int i = 0; i < r; i++)
+        for (int i = 0; i < r; i++) //Diagonal values multiplied by the middle row of t
         {
-            matrix[1][i] = d[i] * t[1][i];
+            matrix[1][i] = d[i] * t[1][i]; //Fill the middle row of the final matrix 
         }
 
         for (int i = 0; i < r - 1; i++)
         {
-            matrix[0][i] = d[i] * t[0][i]
-            matrix[2][i] = d[i + 1] * t[2][i]
+            matrix[0][i] = d[i] * t[0][i] //Fill the top row of the matrix  
+            matrix[2][i] = d[i + 1] * t[2][i] //Fill the bottom row of the matrix 
         }
 
         return matrix
