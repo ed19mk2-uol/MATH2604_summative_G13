@@ -83,15 +83,15 @@ public class Diagonals
 
     public static double[] inverse(double[] a) // Returns the inverse of a diagonal matrix 
     {
-        if (a == null)
+        if (a == null) // check if the input array is null
         {
-            return null;
+            return null; // return null if the input array is null
         }
-        double[] result = new double[a.length];
-        for (int i = 0; i < a.length; i++)
+        double[] result = new double[a.length]; // create a new array to hold the diagonal entries of the inverse matrix
+        for (int i = 0; i < a.length; i++) // iterate through each element of the input array
         {
-            result[i] = 1.0 / a[i];
+            result[i] = 1.0 / a[i]; // compute the reciprocal of each diagonal entry and store it in the result array
         }
-        return result;
+        return result; // return the array containing the diagonal entries of the inverse matrix
     }
 }
