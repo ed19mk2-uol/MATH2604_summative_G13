@@ -44,12 +44,12 @@ public class Tridiagonals
     {
         if (a == null) return false; // check if the array is null
         if (a.length !=3) return false; // check that the array has exactly 3 rows (above diagonal, diagonal, below diagonal)
-        for (double[] row : a) { // check if any of the row are null, as each row must not be null
+        for (double[] row : a) { // check if any of the row are null
             if (row == null) return false;
         }
 
         int n = a[1].length; //use the diagonal row as a reference
-        if (n<1) return false; //safety check bcs matrix size must be at least 1, cant be 0 (n>=1)
+        if (n<1) return false; //safety check as  matrix size must be at least 1 (n>=1)
 
         if (a[0].length !=n || a[2].length !=n) return false; // check that all rows are of the same length
         return true; 
@@ -139,15 +139,15 @@ public class Tridiagonals
     */
     public static double[] linearSolve(double[][] t, double[] v) 
     {
-        if (!isValidTridiagonal(t)) return null; //check if the matrix is tridiagonal
-        if (v==null) return null; // validate vector and make sure vector is not null
+        if (!isValidTridiagonal(t)) return null; //validate if the matrix is tridiagonal
+        if (v==null) return null; // validate vector: make sure it is not null
 
         int n = t[1].length; //get length of matrix T
         if (v.length != n) return null; //Ensure the length of matrix and vector is equal
 
         // Implementing Thomas Algorithm
         // create copy to avoid accidentally changing the original matrix
-        // c1 = modified above diagonal, d1 = modified right hand side
+        // c1 = modified above diagonal, d1 = modified right hand side vector
 
         double[] c1 = new double[n];
         double[] d1 = new double[n];
@@ -158,7 +158,7 @@ public class Tridiagonals
         // above diagonal: t[0][i] = c_i
 
         // Step 1 : Forward sweep - eliminate below-diagonal entries
-        //initialising first row
+        // initialising first row
         c1[0] = t[0][0] / t[1][0]; // c1_0 = c_0 / a_0
         d1[0] = v[0] / t[1][0];    // d1_0 = v_0 / a_0
 
